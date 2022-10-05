@@ -6,7 +6,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { AuthContext } from "../../../store/auth-context";
 
 interface NavBarProps {
-  // userName: string;
   routeName?: string;
   isPadding?: boolean;
   isBackButton?: boolean;

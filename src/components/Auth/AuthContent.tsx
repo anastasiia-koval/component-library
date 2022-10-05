@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert, StyleSheet, View, Text } from "react-native";
+import { Alert, StyleSheet, View } from "react-native";
 
 import Button from "../Button/Button";
 import AuthForm from "./AuthForm";

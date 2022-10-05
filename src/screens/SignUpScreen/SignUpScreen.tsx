@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Alert, View } from "react-native";
+import { Alert } from "react-native";
 import { AuthContext } from "../../../store/auth-context";
 import { createUser } from "../../../util/auth";
 import { AuthContent, Loading } from "../../components";

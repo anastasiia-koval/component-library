@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import colors from "../../../constants/colors";
 import ConfirmButton from "../Button/ConfirmButton";
 import Input from "../Input/Input";
