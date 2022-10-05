@@ -1,14 +1,12 @@
 import React from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { Bounce } from "react-native-animated-spinkit";
+import colors from "../../../constants/colors";
 
-interface LoadingProps {
-  message: string;
-}
-const Loading = ({ message }: LoadingProps) => {
+const Loading = () => {
   return (
     <View style={styles.rootContainer}>
-      <Text style={styles.message}>{message}</Text>
-      <ActivityIndicator size="large" />
+      <Bounce color={colors.primaryMain} size={60} />
     </View>
   );
 };
@@ -21,6 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 32,
+    backgroundColor: colors.primaryLight,
   },
   message: {
     fontSize: 16,

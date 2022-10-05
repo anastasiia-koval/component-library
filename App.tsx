@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, View, SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import colors from "./constants/colors";
 import {
@@ -14,6 +14,7 @@ import AuthContextProvider, { AuthContext } from "./store/auth-context";
 import { BalooBhaijaan_Regular400 } from "@expo-google-fonts/baloo-bhaijaan";
 import { useContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Loading } from "./src/components";
 
 export const AppNavigation = () => {
   const authCntx = useContext(AuthContext);
@@ -40,7 +41,7 @@ export const Root = () => {
   }, []);
 
   if (isTryingToLogin) {
-    return <Text>Loading</Text>;
+    return <Loading />;
   }
 
   return <AppNavigation />;
@@ -55,7 +56,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <Text>FFF</Text>;
+    return <Loading />;
   } else
     return (
       <View style={styles.container}>

@@ -20,7 +20,7 @@ const LoginScreen = ({ navigation }) => {
   }
 
   if (isAuthenticated) {
-    return <Loading message="LOADING" />;
+    return <Loading />;
   } else {
     return (
       <View>

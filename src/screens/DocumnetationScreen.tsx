@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Text, View } from "react-native";
-import { Search, CardList, ScreenWrapper, NavBar } from "../components";
+import { View } from "react-native";
+import {
+  Search,
+  CardList,
+  ScreenWrapper,
+  NavBar,
+  Loading,
+} from "../components";
 import axios from "axios";
 
 const DocumentationScreen = ({ navigation, route }) => {
@@ -18,8 +24,9 @@ const DocumentationScreen = ({ navigation, route }) => {
       })
       .catch((err) => console.log("err :>> ", err));
   };
+
   if (!components) {
-    return <Text>AAA</Text>;
+    return <Loading />;
   } else
     return (
       <ScreenWrapper>

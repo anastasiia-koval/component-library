@@ -1,9 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import { View, Text } from "react-native";
-import { Search, CardList, ScreenWrapper, NavBar } from "../components";
+import {
+  Search,
+  CardList,
+  ScreenWrapper,
+  NavBar,
+  Loading,
+} from "../components";
 import axios from "axios";
-import { AuthContext } from "../../store/auth-context";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const ComponentListScreen = ({ navigation, route }) => {
   const [components, setComponents] = useState();
@@ -11,6 +15,7 @@ const ComponentListScreen = ({ navigation, route }) => {
   useEffect(() => {
     getComponents();
   }, []);
+
   const getComponents = () => {
     axios
       .get("https://632dbd36519d17fb53c585fb.mockapi.io/api/components")
@@ -22,7 +27,7 @@ const ComponentListScreen = ({ navigation, route }) => {
   };
 
   if (!components && !filteredComponents) {
-    return <Text>AAA</Text>;
+    return <Loading />;
   } else
     return (
       <ScreenWrapper>

@@ -16,7 +16,7 @@ const Search = (props: SearchInterface) => {
     setSearch(search);
 
     const filtered = props.allComponents.filter((component) =>
-      component.name.includes(search)
+      component.name.toLowerCase().includes(search.toLowerCase())
     );
     props.setFilteredComponents(filtered);
   };
