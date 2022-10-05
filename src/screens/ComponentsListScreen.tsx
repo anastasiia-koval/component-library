@@ -41,6 +41,7 @@ const ComponentListScreen = ({ navigation, route }) => {
           <CardList
             cardTypes="component"
             navigation={navigation}
+            allComponents={components}
             components={filteredComponents}
             route={route}
           />

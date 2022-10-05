@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import colors from "../../../constants/colors";
-import Avatar from "../Avatar/Avatar";
 import { Ionicons } from "@expo/vector-icons";
 import { AuthContext } from "../../../store/auth-context";
 
@@ -35,7 +34,7 @@ const NavBar = ({ navigation, ...props }: NavBarProps) => {
         </View>
       )}
       <Pressable onPress={authCtx.logout}>
-        <Avatar />
+        <Ionicons name="exit-outline" size={26} color="black" />
       </Pressable>
     </View>
   );

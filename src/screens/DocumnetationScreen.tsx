@@ -41,6 +41,7 @@ const DocumentationScreen = ({ navigation, route }) => {
             cardTypes="document"
             navigation={navigation}
             components={filteredComponents}
+            allComponents={components}
             route={route}
           />
         </View>

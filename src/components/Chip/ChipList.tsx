@@ -33,6 +33,8 @@ const ChipList = ({
               onPress={() =>
                 navigation.navigate(navigateTo, {
                   componentName: component.name,
+                  componentOverview: component.overview,
+                  componentID: component.id,
                   components: allComponents,
                 })
               }

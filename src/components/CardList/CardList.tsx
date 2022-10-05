@@ -6,13 +6,20 @@ interface CardListProps {
   navigation: any;
   route: any;
   components: Array<any>;
+  allComponents: Array<any>;
   cardTypes: "document" | "component";
 }
-const CardList = ({ navigation, components, cardTypes }: CardListProps) => {
+const CardList = ({
+  navigation,
+  components,
+  cardTypes,
+  allComponents,
+}: CardListProps) => {
   const navigateTo =
     cardTypes === "document"
       ? "ComponentDocumentation"
       : cardTypes === "component" && "ComponentOverview";
+
   return (
     <ScrollView
       style={styles.cardListContainer}
@@ -28,7 +35,9 @@ const CardList = ({ navigation, components, cardTypes }: CardListProps) => {
               onPress={() =>
                 navigation.navigate(navigateTo, {
                   componentName: component.name,
-                  components: components,
+                  componentOverview: component.overview,
+                  componentID: component.id,
+                  components: allComponents,
                 })
               }
             />
