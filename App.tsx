@@ -1,5 +1,10 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  Platform,
+  StatusBar,
+} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import colors from "./constants/colors";
 import {
@@ -61,7 +66,7 @@ export default function App() {
     return (
       <View style={styles.container}>
         <SafeAreaView style={styles.safeArea}>
-          <StatusBar style="auto" />
+          <StatusBar />
         </SafeAreaView>
         <AuthContextProvider>
           <Root />
@@ -78,5 +83,6 @@ const styles = StyleSheet.create({
   safeArea: {
     marginHorizontal: 22,
     backgroundColor: colors.primaryLight,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });

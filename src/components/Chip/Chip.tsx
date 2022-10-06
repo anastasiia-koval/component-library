@@ -1,6 +1,7 @@
 import React from "react";
 import { Chip as RNEChip } from "@rneui/themed";
 import colors from "../../../constants/colors";
+import { Platform } from "react-native";
 
 interface ChipProps {
   title: string;
@@ -14,6 +15,7 @@ const Chip = (props: ChipProps) => {
       onPress={props.onPress}
       buttonStyle={{
         backgroundColor: props.selected ? colors.selectedChip : colors.grey,
+        marginRight: Platform.OS === "android" ? 8 : 0,
       }}
       titleStyle={{
         color: props.selected ? colors.primaryMain : colors.greyDark,
